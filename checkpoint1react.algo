@@ -1,0 +1,106 @@
+
+task1
+
+ALGORITHM sentenece_reader
+VAR
+i : INTEGER;
+word,Vowels : INTEGER := 0;
+sentence,test : String;
+
+
+
+BEGIN
+
+Read(sentence)
+test:=sentence
+if (test.length-1==".")THEN 
+
+FOR i FROM 1 TO test.length STEP step  DO 
+IF(Lowercase(test[i])==["a","i","o","y","u","e"])THEN
+Vowels:=Vowels+1
+END_IF
+IF(test[i+1]==" " or "." )THEN
+word:=word+1
+END_IF
+
+END_FOR
+Write("the word number is",word,"the vowls number is ",Vowels)
+
+ELSE
+Write("this sentence dosn't end with '.' ")
+END_IF
+END
+
+
+
+
+
+
+task1
+
+
+ALGORITHM sentenece_reader
+VAR
+i , j , n ,max1,max2 numb : INTEGER;
+sum,counter : INTEGER := 0;
+set1 :=new int[max1]
+set2 :=new int[max2]
+
+
+BEGIN
+write("donner le taile set1");
+read(max1)
+Write("1/add number to set1\n 2/exit")
+while(n:= not 2 or counter:=max1) DO {
+SWITCH(n)DO
+CASE 1 : write("insert the number ");
+Read(numb);
+set1[counter]:=numb
+counter:=counter+1
+break;
+DEFAULT;
+}
+counter:=0
+write("donner le taile set2");
+read(max2)
+Write("1/add number to set2\n 2/exit")
+while(n:= not 2 or counter:=max2) DO {
+SWITCH(n)DO
+CASE 1 : write("insert the number ");
+Read(numb);
+set1[counter]:=numb
+counter:=counter+1
+break;
+DEFAULT;
+
+}
+
+
+
+FOR i FROM 1 TO set1.length Step step DO
+FOR j FROM 1 TO set2.length Step step DO
+
+
+if (set1[i]==set2[j])THEN
+test:= 1;
+END_IF;
+END_FOR;
+if(test==0)Then
+sum:=sum+set1[i];
+END_IF;
+END_FOR;
+
+FOR j FROM 1 TO set2.length Step step DO
+FOR i FROM 1 TO set1.length Step step DO
+
+if (set1[i]==set2[j])THEN
+test:= 1;
+END_IF;
+if(test==0)Then
+sum:=sum+set2[j];
+END_IF;
+END_FOR;
+
+Write(sum);
+END;
+
